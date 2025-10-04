@@ -3,18 +3,20 @@ name: run test of feature branches
 on:
   push:
     branches:
-      '**'
+      - '**'
+
 jobs:
   run-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-      - uses: actions/setup-python@v6
-        with: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
           python-version: '3.12'
 
-      - name: run test
-        run:  python test.py
-      
-    
+      - name: Run tests
+        run: python test.py
