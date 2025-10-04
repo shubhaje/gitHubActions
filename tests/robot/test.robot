@@ -14,3 +14,5 @@ ${SCREENSHOT_DIR}    ./Screenshots/
 Login Test
     ${usrs}      create list    ${USERNAME}    ${PASSWORD}
     Log    ${usrs}
+    Log   ${usrs[0]}
+    
