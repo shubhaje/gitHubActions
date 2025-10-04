@@ -3,7 +3,7 @@ name: run test of feature branches
 on:
   push:
     branches:
-      '/*'
+      '**'
 jobs:
   run-test:
     runs-on: ubuntu-latest
