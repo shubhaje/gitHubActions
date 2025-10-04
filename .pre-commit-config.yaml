@@ -1,0 +1,30 @@
+repos:
+  - repo: local
+    hooks:
+      - id: robot-framework-tests
+        name: Robot Framework Tests
+        entry: robot
+        args: 
+          - --outputdir
+          - results/robot
+          - tests/robot/
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [commit]
+        
+      - id: pytest-playwright-tests
+        name: Pytest Playwright Tests
+        entry: pytest
+        language: python
+        additional_dependencies: [pytest, pytest-playwright,pytest-html]
+        args:
+          - tests/playwright/
+          - -v
+          - --headed  # Remove this for headless
+          - --html=results/pytest/report.html
+          - --self-contained-html
+          - -p pytest_playwright 
+          - --capture=sys
+        pass_filenames: false
+        always_run: true
