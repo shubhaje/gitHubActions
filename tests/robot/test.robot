@@ -15,4 +15,8 @@ Login Test
     ${usrs}      create list    ${USERNAME}    ${PASSWORD}
     Log    ${usrs}
     Log   ${usrs[0]}
+Test1
+    ${usrs}      create list    ${USERNAME}    ${PASSWORD}
+    Log    ${usrs}
+    Log   ${usrs[0]}
     
