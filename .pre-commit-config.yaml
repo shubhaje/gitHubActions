@@ -11,7 +11,7 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
-        stages: [commit]
+        stages: [pre-commit]
         
       - id: pytest-playwright-tests
         name: Pytest Playwright Tests
